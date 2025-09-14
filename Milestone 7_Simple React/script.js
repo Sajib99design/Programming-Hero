@@ -24,4 +24,4 @@ const hideUser = () => {
 
 // isActive && showUser();    //true hole output
 
-isActive || hideUser()   //false hole output
+// isActive || hideUser()   //false hole output
