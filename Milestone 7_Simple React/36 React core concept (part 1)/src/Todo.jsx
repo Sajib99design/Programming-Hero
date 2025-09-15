@@ -44,14 +44,15 @@
 
 
 
+
 //   conditional rendering : 6 use variable
-export default function Todo({ task, isDone, time }) {
-    let listItem;
-    if (isDone) {
-        listItem = <li>Done : {task} {time} </li>
-    }
-    else {
-        listItem = <li>Pending: {task} {time}</li>
-    };
-    return listItem;
+export default function Todo({task, isDone, time}) {
+    let listItem ;
+   if (isDone) {
+      listItem =  <li>Done : {task} {time} </li>
+   }
+   else{
+      listItem =  <li>Pending: {task} {time}</li>
+   };
+   return listItem;
 }
