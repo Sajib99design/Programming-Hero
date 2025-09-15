@@ -31,7 +31,13 @@
 
 
 
-// && oparator
-export default function Todo({task, isDone, time= 0}) {
-    return isDone && <li>Done Tasks: {task} time : {time}</li>
-}
+//  conditional rendering : 4 &&
+// export default function Todo({task, isDone, time= 0}) {
+//     return isDone && <li>Done Tasks: {task} time : {time}</li>
+// }
+
+
+//   conditional rendering : 5 ||
+// export default function Todo({task, isDone, time= 0}) {
+//     return isDone || <li> Not Done Tasks: {task} time : {time}</li>
+// }
