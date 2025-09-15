@@ -41,3 +41,17 @@
 // export default function Todo({task, isDone, time= 0}) {
 //     return isDone || <li> Not Done Tasks: {task} time : {time}</li>
 // }
+
+
+
+//   conditional rendering : 6 use variable
+export default function Todo({ task, isDone, time }) {
+    let listItem;
+    if (isDone) {
+        listItem = <li>Done : {task} {time} </li>
+    }
+    else {
+        listItem = <li>Pending: {task} {time}</li>
+    };
+    return listItem;
+}
