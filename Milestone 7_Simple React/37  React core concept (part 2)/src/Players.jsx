@@ -1,22 +1,23 @@
-import { useEffect, useState } from "react";
-import Player from "./Player";
+import { useEffect, useState } from "react"
 
 export default function Players() {
-    const [players, setPlayers] = useState([]);
+    const [players, setPlayers] = useState([])
 
-        useEffect(() => {
-            fetch('https://jsonplaceholder.typicode.com/users')
+    useEffect(() => {
+        fetch('https://jsonplaceholder.typicode.com/users')
             .then(res => res.json())
             .then(data => setPlayers(data))
-        }, []);
+    }, []);
+
 
     return (
-        <div>
-            <h3>Player Name</h3>
-            <ul>
-                { players.map(player => <Player player={player} /> ) }
-            </ul>
+        <div className="card">
+            <h4>Players: {players.length}</h4>
+            <ol>
+                {
+                    players.map(player => <li>{player.name}</li>)
+                }
+            </ol>
         </div>
     )
-
 }

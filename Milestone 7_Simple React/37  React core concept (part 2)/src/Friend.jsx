@@ -1,15 +1,13 @@
-import React, { use } from 'react'
-import One from './One';
+export default function Friend({ friend }) {
 
-function Friend({fetchPromise}) {
+    console.log(friend);
+    const {name, email, phone} = friend;
 
-  const data =  use(fetchPromise);
-  console.log(data);
-  return (
-    <div>
-      <h3>Frieds: {data.map( data => <One data={data} />  ) } </h3>
-    </div>
-  )
+    return (
+        <div className="card">
+            <h4>Name: {name} </h4>
+            <p>Email: {email}</p>
+            <p>Phone: {phone}</p>
+        </div>
+    )
 }
-
-export default Friend

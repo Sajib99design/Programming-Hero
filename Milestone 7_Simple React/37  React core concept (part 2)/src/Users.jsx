@@ -1,15 +1,14 @@
-import React, { use } from 'react'
+import { use } from "react"
 
-function Users({ fetchUser }) {
-  const data = use(fetchUser);
-  // console.log(data[0].name);
+export default function Users({ fetchUsers }) {
 
-  return (
-    <div>
-      <h3>Users: </h3>
-      {data.map(name =>  <li> { name.name} </li>  )}
-    </div>
-  )
+    const users = use(fetchUsers);
+
+    console.log(users);
+
+    return (
+        <div className="card">
+            <h3>Users: {users.length}</h3>
+        </div>
+    )
 }
-
-export default Users

@@ -1,85 +1,73 @@
-import { lazy, Suspense, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Todo from './Todo';
-import Actor from './Actor';
-import Singer from './Singer';
+import Counter from './Counter';
+import Batsman from './Batsman';
 import Users from './Users';
-import Friend from './Friend';
+import Friends from './Friends';
+import Posts from './Posts';
 import Players from './Players';
 
-const fetchUser = fetch('https://jsonplaceholder.typicode.com/users')
-  .then(res => res.json())
+import './App.css'
+import { Suspense } from 'react';
 
+// const fetchUsers = fetch('https://jsonplaceholder.typicode.com/users')
+//   .then(res => res.json())
 
-const fetchFrind = async () => {
-  const res = await fetch('https://jsonplaceholder.typicode.com/users');
-  return res.json();
-}
+// const fetchFriends = async() =>{
+//   const res = await fetch('https://jsonplaceholder.typicode.com/users');
+//   return res.json();
+// }
 
-
+// const fetchPosts = async() =>{
+//   const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+//   return res.json();
+// }
 
 function App() {
-  // const time = 50;
-  // const actors = ['Bappa Raj', 'Omar Sunny', 'Salman Shah', 'Jasim', 'Anwar'];
+  // const friendsPromise = fetchFriends();
+  // const postsPromise = fetchPosts();
 
-  // const singers = [
-  //   {id: 1, name: 'Sajib', age: 25},
-  //   {id: 2, name: 'rajib', age: 20},
-  //   {id: 3, name: 'rahat', age: 32}
-  // ];
-
-  // function handle() {
-  //   alert('i am clicked');
-  // }
-
-  // let handle2 = () => {
-  //  alert('i am clicked3');
-  // }
-
-  // let handle3 = (input) => {
-  //     alert(input);
-  // }
-
-
-  let [count, setCount] = useState(0);
-  let [six, setSix] = useState(0);
-
-
-  let test = () => {
-    console.log('me');
-    let newCount = count + 6;
-    setCount(newCount);
-
-    let newSix = six + 1;
-    setSix(newSix);
+  function handleClick() {
+    alert('I am clicked.')
   }
-  const fetchPromise = fetchFrind();
+
+  const handleClick3 = () => {
+    alert('clicked 3')
+  }
+
+  const handleAdd5 = (num) => {
+    const newNum = num + 5;
+    alert(newNum);
+  }
 
   return (
     <>
-      <h1>Vite + React {count}</h1>
-      <h2>six count {six > 4 && six}  </h2>
-
-      <button onClick={test}> Click </button>
-      {/* <Players /> */}
-
-      {/* <Suspense fallback={<h4>Loading.......</h4>}>
-        <Users fetchUser={fetchUser} />
+      <h3>Vite + React</h3>
+      <Players></Players>
+      {/* <Suspense fallback={<h4>Posts are coming.......</h4>}>
+        <Posts postsPromise={postsPromise}></Posts>
       </Suspense> */}
 
-      <Suspense fallback={<p> wait plz comeing frieds </p>}>
-        <Friend fetchPromise={fetchPromise} />
-      </Suspense>
+      {/* <Suspense fallback={<h3>Loading...</h3>}>
+        <Users fetchUsers ={fetchUsers}></Users>
+      </Suspense> */}
 
+      {/* <Suspense fallback={<h3>Friends are coming for treat...</h3>}>
+        <Friends friendsPromise={friendsPromise}></Friends>
+      </Suspense> */}
 
-      {/* <button onClick={handle}>   click </button>
-      <button onClick={handle2}>   click 2 </button>
-      <button onClick={ () => alert('i am click 3')}>   click 3 </button>
+      <Batsman></Batsman>
+      <Counter></Counter>
 
-      <button onClick={ () => handle3('hello') }>   click 4 </button> */}
+      {/* <button onclick="handleClick()">Click Me</button> */}
+      <button onClick={handleClick}>Click Me</button>
+      <button onClick={function handleClick2() {
+        alert('clicked 2')
+      }}>Click Me2</button>
 
+      <button onClick={handleClick3}>Click me 3</button>
+
+      <button onClick={() => alert('click 4')}>Click me 4</button>
+
+      <button onClick={() => handleAdd5(10)}>Click Add 5</button>
     </>
   )
 }

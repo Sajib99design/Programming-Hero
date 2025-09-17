@@ -40,9 +40,10 @@
 .read-the-docs {
   color: #888;
 }
-h4{
-  color: orange;
-}
-.border {
-  border: 2px solid orange
+
+.card{
+  border: 2px solid gold;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 20px;
 }
