@@ -22,9 +22,10 @@ function App() {
     setAvailableBalance(availableBalance+parseInt(p.price.split("USD").join("").split(",").join("")))
   }
 
-  
+
   return (
     <>
+    {/* navbar area start  */}
       <Navbar availableBalance={availableBalance}></Navbar>
       <div className="max-w-[1200px] mx-auto flex justify-between items-center">
           <h1 className="font-bold text-2xl">{
@@ -42,7 +43,7 @@ function App() {
         <AvailablePlayers purchasedPlayers={purchasedPlayers} setPurchasedPlayers={setPurchasedPlayers} availableBalance={availableBalance} setAvailableBalance={setAvailableBalance} playersPromise={playersPromise}></AvailablePlayers>
       </Suspense>:<SelectedPlayers removePlayer={removePlayer} purchasedPlayers={purchasedPlayers}></SelectedPlayers>
       }
-      
+
       <ToastContainer/>
     </>
   );
