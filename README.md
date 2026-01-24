@@ -9,7 +9,7 @@ This repo contains structured notes, code snippets, key concepts, and useful lin
 
 The **Complete Web Development Course** is a project-based learning program that covers:
 
-- HTML5, CSS3, Tailwind, Bootstrap
+- HTML5, CSS3, Tailwind, Bootstraps
 - JavaScript (ES6+), DOM, API
 - React.js, Firebase
 - Node.js, Express.js, MongoDB
